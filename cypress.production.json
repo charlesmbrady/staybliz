@@ -1,7 +1,7 @@
 {
-  "baseUrl": "https://mernolithic-sql-production.herokuapp.com/",
+  "baseUrl": "https://staybliz.herokuapp.com/",
   "reporter": "./node_modules/mochawesome/src/mochawesome.js",
-  "apiUrl": "https://mernolithic-sql-production.herokuapp.com/",
+  "apiUrl": "https://staybliz.herokuapp.com/",
   "env": {},
   "reporterOptions": {
     "reportDir": "cypress/reports/integration/reports/mocha",
