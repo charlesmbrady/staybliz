@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+
 body,
 html,
 #root,
@@ -7,4 +9,10 @@ html,
   margin: 0 auto;
   box-sizing: border-box;
   display: grid;
+  font-family: 'Hind', sans-serif;
+}
+
+:root {
+  --main-color: yellow;
+  --pane-padding: 5px 42px;
 }

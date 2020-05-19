@@ -13,7 +13,7 @@ export default function NavTrack() {
       }
     });
   };
-  const title = 'MERN Starter';
+  const title = 'Staybliz';
 
   const login = (
     <Link className={style.navLink} data-test='login-navlink' to='/login'>

@@ -1,13 +1,22 @@
+:root {
+  --main-color: #eafff9;
+  --second: #00aeef;
+  --third: #13e6af;
+  --fourth: #19090b;
+  --fifth: #780c56;
+  --sixth: #d5ece6;
+  --success: #00b989;
+}
+
 .gridContainer {
   display: grid;
-  border: 1px solid blue;
   grid-template-columns: 50px 10fr 0px;
   height: 100vh;
   overflow: scroll;
+  background: url('../../assets//Background1@3x.png');
 }
 .gridContainerLeftDrawerOpen {
   display: grid;
-  border: 1px solid blue;
   grid-template-columns: 100px 10fr 0px;
   height: 100vh;
   overflow: scroll;
@@ -21,6 +30,51 @@
 
 .contentContainer {
   height: 100%;
+  margin: 50px;
+}
+
+.subItem {
+  color: var(--second);
+  font-size: 2rem;
+}
+
+.heroHeader {
+  color: var(--main-color);
+  height: 100%;
+  font-size: 4.5rem;
+}
+
+.divide {
+  /* color: black; */
+  border: 1px solid rgba(255, 255, 255, 0.472);
+  /* width: 98%; */
+  border-radius: 100%;
+}
+
+.infoLine {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.getStartedButton {
+  background: var(--success);
+  border-radius: 5px;
+  font-size: 1.25rem;
+  color: var(--main-color);
+  text-decoration: none;
+  padding: 15px 50px;
+}
+
+.jumboTwo {
+  padding: 10rem;
+}
+
+.quality {
+  color: var(--third);
+}
+
+.stability {
+  color: var(--second);
 }
 .leftDrawer {
 }
@@ -29,15 +83,4 @@
 }
 
 .heroContainer {
-}
-
-.heroHeader {
-  color: blue;
-}
-
-.divide {
-  color: black;
-  border: 1px solid black;
-  /* width: 98%; */
-  border-radius: 100%;
 }
