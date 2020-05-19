@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
 
+:root {
+  --main-color: #eafff9;
+  --second: #00aeef;
+  --third: #13e6af;
+  --fourth: #19090b;
+  --fifth: #780c56;
+  --sixth: #d5ece6;
+  --success: #00b989;
+}
+
 body,
 html,
 #root,

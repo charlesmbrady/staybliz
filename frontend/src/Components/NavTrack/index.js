@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
 import API from '../../Utilities/API';
+import logo from '../../assets/logo.png';
 
 export default function NavTrack() {
   const { user, setUser } = useContext(UserContext);
@@ -49,7 +50,7 @@ export default function NavTrack() {
 
   return (
     <div className={style.track}>
-      <h2 className={style.trackTitle}>{title}</h2>
+      <img src={logo} className={style.logo} alt='' />
 
       {items &&
         items.length > 0 &&
