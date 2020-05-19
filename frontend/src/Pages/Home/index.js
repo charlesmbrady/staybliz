@@ -16,10 +16,8 @@ export default function Home() {
   const { global, setGlobal } = useContext(GlobalContext);
   const leftDrawerOpen = global.leftDrawerOpen;
 
-  const mainItem = (
-    <h2 className={style.heroHeader}>Hello main item passed as prop</h2>
-  );
-  const subItem = <p>Hello sub item passed as prop</p>;
+  const mainItem = <h2 className={style.heroHeader}>Say goodbye to bugs.</h2>;
+  const subItem = <p>Or rather, never say "hello"</p>;
 
   return (
     <div
