@@ -1,3 +1,13 @@
+:root {
+  --main-color: white;
+  --second: #00aeef;
+  --third: #13e6af;
+  --fourth: #19090b;
+  --fifth: #780c56;
+  --sixth: #d5ece6;
+  --success: #00b989;
+}
+
 .fieldGroup {
   display: grid;
   grid-gap: 0.25rem;
@@ -6,20 +16,32 @@
 
 .label,
 .input,
+.invalidInput,
 .error {
-  width: 94%;
-  margin: 0 auto;
+  /* width: 94%; */
+  /* margin: 0 auto; */
 }
 
 .label {
   font-weight: bold;
+  color: var(--fifth);
+  font-size: 1rem;
 }
 
 .input {
+  border: none;
+  border-radius: 2rem;
+  /* box-shadow: 0px px 1px 1px black; */
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
 }
 
 .invalidInput {
   border: 3px solid red;
+  font-size: 0.8rem;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .error {

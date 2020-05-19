@@ -12,6 +12,8 @@
   display: grid;
   justify-items: center;
   padding: 2rem;
+  background: url('../../assets//Background1@3x.png');
+  height: 100vh;
 }
 
 .container {

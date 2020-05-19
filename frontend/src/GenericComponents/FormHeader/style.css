@@ -1,8 +1,18 @@
-.formHeader {
-  background: black;
-  padding: 20px;
+:root {
+  --main-color: #eafff9;
+  --second: #00aeef;
+  --third: #13e6af;
+  --fourth: #19090b;
+  --fifth: #780c56;
+  --sixth: #d5ece6;
+  --success: #00b989;
 }
 
-.formTitle {
-  color: blue;
+.title {
+  color: var(--fifth);
+  /* background: var(--sixth); */
+  text-align: center;
+  /* border-radius: 4px; */
+  /* border-bottom: 1px solid var(--fifth); */
+  /* text-decoration: underline; */
 }

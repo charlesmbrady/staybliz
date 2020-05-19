@@ -8,7 +8,7 @@ export default function Form({ title, fieldGroups, footer, submitFunction }) {
 
   return (
     <form className={style.form} onSubmit={handleSubmit} noValidate>
-      <FormHeader title={title} />
+      <FormHeader className={style.title} title={title} />
 
       {/* Form Fields will be inserted here by passing an array of <FieldGroup /> components to the fieldGroups prop*/}
       {fieldGroups}

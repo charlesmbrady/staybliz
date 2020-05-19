@@ -1,2 +1,17 @@
+:root {
+  --main-color: #eafff9;
+  --second: #00aeef;
+  --third: #13e6af;
+  --fourth: #19090b;
+  --fifth: #780c56;
+  --sixth: #d5ece6;
+  --success: #00b989;
+}
+
 .submitButton {
+  background: var(--second);
+  color: white;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
 }
