@@ -1,0 +1,268 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-05-10T18:01:22.354Z",
+    "end": "2020-05-10T18:01:22.354Z",
+    "duration": 3241,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fe99cfd9-ceff-440a-9b55-2472684e609d",
+      "title": "",
+      "fullFile": "cypress/integration/test-spec.js",
+      "file": "cypress/integration/test-spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2cdcb9d3-659e-4b50-ae77-939123ae2a4e",
+          "title": "home",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "can click ping button",
+              "fullTitle": "home can click ping button",
+              "timedOut": null,
+              "duration": 1495,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('button').click();",
+              "err": {
+                "message": "Uncaught Uncaught TypeError: _Utilities_API__WEBPACK_IMPORTED_MODULE_3__.default.authenticate is not a function\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "Uncaught Uncaught TypeError: _Utilities_API__WEBPACK_IMPORTED_MODULE_3__.default.authenticate is not a function\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at authenticateUser (http://localhost:8081/main.bundle.js:47380:60)\n    at onClick (http://localhost:8081/main.bundle.js:47470:14)\n    at HTMLUnknownElement.callCallback (http://localhost:8081/main.bundle.js:7621:14)\n    at Object.invokeGuardedCallbackDev (http://localhost:8081/main.bundle.js:7670:16)\n    at invokeGuardedCallback (http://localhost:8081/main.bundle.js:7725:31)\n    at invokeGuardedCallbackAndCatchFirstError (http://localhost:8081/main.bundle.js:7739:25)\n    at executeDispatch (http://localhost:8081/main.bundle.js:7822:3)\n    at executeDispatchesInOrder (http://localhost:8081/main.bundle.js:7847:5)\n    at executeDispatchesAndRelease (http://localhost:8081/main.bundle.js:10711:5)\n    at executeDispatchesAndReleaseTopLevel (http://localhost:8081/main.bundle.js:10720:10)",
+                "diff": null
+              },
+              "uuid": "05b3064e-5958-4686-9a6d-aca2f222bb9c",
+              "parentUUID": "2cdcb9d3-659e-4b50-ae77-939123ae2a4e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "05b3064e-5958-4686-9a6d-aca2f222bb9c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1495,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "00cec454-944c-4ef1-9a82-47023f6c5bb0",
+          "title": "Users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Canary test",
+              "fullTitle": "Users Canary test",
+              "timedOut": null,
+              "duration": 30,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(1).to.equal(1);",
+              "err": {},
+              "uuid": "55613e1f-8b8d-41fc-a9ec-17a7105341bf",
+              "parentUUID": "00cec454-944c-4ef1-9a82-47023f6c5bb0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Can create user",
+              "fullTitle": "Users Can create user",
+              "timedOut": null,
+              "duration": 211,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit('/');\ncy.request('POST', \"\".concat(Cypress.config('apiUrl'), \"/auth/register\"), {\n  firstName: 'charles',\n  lastName: 'brady',\n  email: 'ranom',\n  password: 'myPassword1!'\n}).then(function (response) {\n  // response.body is automatically serialized into JSON\n  expect(response.body).to.have.property('firstName', 'charles'); // true\n});",
+              "err": {},
+              "uuid": "12d8061f-b4d4-4afb-bdba-ca24311873dd",
+              "parentUUID": "00cec454-944c-4ef1-9a82-47023f6c5bb0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "55613e1f-8b8d-41fc-a9ec-17a7105341bf",
+            "12d8061f-b4d4-4afb-bdba-ca24311873dd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 241,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "955acb2c-38ff-4831-a765-632f69e5c252",
+      "title": "",
+      "fullFile": "cypress/integration/test.js",
+      "file": "cypress/integration/test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "adbf94e4-c8c6-4f68-afcc-2adc9168048d",
+          "title": "coverage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cover the tested code",
+              "fullTitle": "coverage cover the tested code",
+              "timedOut": null,
+              "duration": 1455,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('button').click();",
+              "err": {
+                "message": "Uncaught Uncaught TypeError: _Utilities_API__WEBPACK_IMPORTED_MODULE_3__.default.authenticate is not a function\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "Uncaught Uncaught TypeError: _Utilities_API__WEBPACK_IMPORTED_MODULE_3__.default.authenticate is not a function\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at authenticateUser (http://localhost:8081/main.bundle.js:47380:60)\n    at onClick (http://localhost:8081/main.bundle.js:47470:14)\n    at HTMLUnknownElement.callCallback (http://localhost:8081/main.bundle.js:7621:14)\n    at Object.invokeGuardedCallbackDev (http://localhost:8081/main.bundle.js:7670:16)\n    at invokeGuardedCallback (http://localhost:8081/main.bundle.js:7725:31)\n    at invokeGuardedCallbackAndCatchFirstError (http://localhost:8081/main.bundle.js:7739:25)\n    at executeDispatch (http://localhost:8081/main.bundle.js:7822:3)\n    at executeDispatchesInOrder (http://localhost:8081/main.bundle.js:7847:5)\n    at executeDispatchesAndRelease (http://localhost:8081/main.bundle.js:10711:5)\n    at executeDispatchesAndReleaseTopLevel (http://localhost:8081/main.bundle.js:10720:10)",
+                "diff": null
+              },
+              "uuid": "207d990d-d321-44ae-8b0c-3fef8d7ce9d3",
+              "parentUUID": "adbf94e4-c8c6-4f68-afcc-2adc9168048d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "207d990d-d321-44ae-8b0c-3fef8d7ce9d3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1455,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "65fc90c3-8a5f-40d1-ba13-114e505a1245",
+          "title": "coverage2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should pass",
+              "fullTitle": "coverage2 should pass",
+              "timedOut": null,
+              "duration": 50,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(1).to.equal(1);",
+              "err": {},
+              "uuid": "3940fa02-3963-4e89-85f0-a35280544629",
+              "parentUUID": "65fc90c3-8a5f-40d1-ba13-114e505a1245",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3940fa02-3963-4e89-85f0-a35280544629"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 50,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/integration/reports/mocha",
+        "quiet": true,
+        "html": false,
+        "overwrite": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}
