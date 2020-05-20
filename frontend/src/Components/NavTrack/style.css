@@ -48,3 +48,7 @@
   height: 2rem;
   width: auto;
 }
+
+.logoContainer {
+  display: grid;
+}

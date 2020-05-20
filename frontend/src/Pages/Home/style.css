@@ -10,7 +10,7 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 50px 10fr 0px;
+  grid-template-columns: 0px 10fr 0px;
   height: 100vh;
   overflow: scroll;
   background: url('../../assets//Background1@3x.png');
@@ -30,7 +30,7 @@
 
 .contentContainer {
   height: 100%;
-  margin: 50px;
+  /* margin: 50px; */
 }
 
 .subItem {
@@ -69,7 +69,7 @@
 }
 
 .jumboTwo {
-  padding: 10rem;
+  /* padding: 10rem; */
 }
 
 .quality {
