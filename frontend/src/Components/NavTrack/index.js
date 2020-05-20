@@ -1,6 +1,6 @@
 import style from './style.css';
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
 import API from '../../Utilities/API';
 import logo from '../../assets/logo.png';
@@ -9,10 +9,8 @@ export default function NavTrack() {
   const { user, setUser } = useContext(UserContext);
 
   const logout = () => {
-    API.logout().then((res) => {
-      if (res.status == 200) {
-        setUser({ ...user, isAuthenticated: false, isCreated: false });
-      }
+    API.logout().then(() => {
+      setUser({ ...user, isAuthenticated: false, isCreated: false });
     });
   };
 
@@ -47,6 +45,10 @@ export default function NavTrack() {
   const items = user.isAuthenticated
     ? authenticatedItems
     : notAuthenticatedItems;
+
+  // if (!user.isAuthenticated) {
+  //   return <Redirect to='/' />;
+  // }
 
   return (
     <div className={style.track}>

@@ -51,6 +51,11 @@ describe('User Authentication', function () {
     cy.login(user);
     cy.url().should('contain', 'dashboard');
   });
+
+  it('Non-authenticated user will be redirect to login from protected route', () => {
+    cy.visit('/dashboard');
+    cy.url().should('contain', '/login');
+  });
 });
 
 describe('API - Authentication', () => {
