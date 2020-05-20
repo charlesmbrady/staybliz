@@ -13,6 +13,7 @@ import LeftDrawer from '../../Components/LeftDrawer';
 import UnevenHTrack from '../../GenericComponents/UnevenHTrack';
 import RightDrawer from '../../Components/RightDrawer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ProjectsList from './components/ProjectsList';
 
 export default function Dashboard() {
   const { global, setGlobal } = useContext(GlobalContext);
@@ -42,14 +43,15 @@ export default function Dashboard() {
           items={projectToolbarItems}
         />
         {/* make component for ProjectsList, and the Project itself/ if path matches /projects get all, if /project/id display project */}
+
         {/* Make component for TestsList that just goes under the project details, make component for Test that also just renders */}
 
         {/* if the path matches todos, render t*/}
-        {/* <Switch>
-          <Route path='/login' component={Login} />
+        <Switch>
+          {/* <Route path='/login' component={Login} /> */}
 
-          <Route path='/' component={Home} />
-        </Switch> */}
+          <Route path='/dashboard' component={ProjectsList} />
+        </Switch>
       </div>
       <RightDrawer className='rightDrawer' />
     </div>

@@ -35,5 +35,8 @@
 
 .dashboardToolbar {
   background: var(--sixth);
+  width: 95%;
+  margin: auto;
+  /* height: 40px; */
   /* margin-top: 15px; */
 }
