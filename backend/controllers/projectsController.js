@@ -19,7 +19,7 @@ module.exports = {
       })
       .catch((err) => {
         res.json(err);
-        console.log('ERROR: ' + err.errors[0].message);
+        console.log('ERROR: ' + err);
       });
   },
   getById: function (req, res) {

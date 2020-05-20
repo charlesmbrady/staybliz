@@ -21,4 +21,9 @@ export default {
       throw err;
     });
   },
+  createProject: function (project) {
+    return axios.post('/api/projects', project).catch((err) => {
+      throw err;
+    });
+  },
 };

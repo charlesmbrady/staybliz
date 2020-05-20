@@ -8,8 +8,12 @@
   --success: #00b989;
 }
 
-.projects {
+.toolbar {
   display: grid;
-  /* height: 100vh; */
-  /* overflow: scroll; */
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+.toolbarItem {
+  padding: 0 10px;
 }

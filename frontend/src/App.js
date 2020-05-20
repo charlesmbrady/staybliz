@@ -16,11 +16,18 @@ import API from './Utilities/API';
 
 //********** Pages/Components **********//
 import Mask from './GenericComponents/Mask';
-import NavTrack from './Components/NavTrack';
+import Header from './Components/Header';
+import NavBar from './Components/NavBar';
 import Dashboard from './Pages/Dashboard';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
+import Projects from './Pages/Projects';
+import Project from './Pages/Project';
+import NewProject from './Pages/NewProject';
+import Tests from './Pages/Tests';
+import Test from './Pages/Test';
+import NewTest from './Pages/NewTest';
 
 export default function App() {
   // Set UserContext provider values
@@ -37,8 +44,11 @@ export default function App() {
   const [global, setGlobal] = useState({
     isSubmitting: false,
     isLoading: false,
-    leftDrawerOpen: false,
-    rightDrawerOpen: false,
+    project: {
+      id: null,
+      name: '',
+      todos: [],
+    },
   });
   const globalValue = useMemo(() => ({ global, setGlobal }), [
     global,
@@ -49,6 +59,7 @@ export default function App() {
   const [formValues, setFormValues] = useState({
     // All field names go here
     firstName: null,
+    projectName: null,
     lastName: null,
     email: null,
     password: null,
@@ -97,12 +108,30 @@ export default function App() {
             <Router>
               <div className='main-container'>
                 {global.isLoading && <Mask />}
-                {user.isAuthenticated && <Redirect to='/dashboard' />}
-                <NavTrack />
+                {user.isAuthenticated && <Redirect to='/projects' />}
+                <Header />
                 <Switch>
                   <Route exact path='/login' component={Login} />
                   <Route exact path='/register' component={Register} />
                   <PrivateRoute exact path='/dashboard' component={Dashboard} />
+                  <PrivateRoute path='/projects/new'>
+                    <NewProject />
+                  </PrivateRoute>
+                  <PrivateRoute path='/projects/:id/tests/new'>
+                    <NewTest />
+                  </PrivateRoute>
+                  <PrivateRoute exact path='/projects'>
+                    <Projects />
+                  </PrivateRoute>
+                  <PrivateRoute exact path='/projects/:id'>
+                    <Project />
+                  </PrivateRoute>
+                  <PrivateRoute exact path='/projects/:id/tests'>
+                    <Tests />
+                  </PrivateRoute>
+                  <PrivateRoute exact path='/projects/:id/tests/:id'>
+                    <Test />
+                  </PrivateRoute>
 
                   <Route path='/' component={Home} />
                 </Switch>

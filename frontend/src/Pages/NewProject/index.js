@@ -17,16 +17,16 @@ import { AiFillFolderAdd } from 'react-icons/ai';
 import { MdPlaylistAdd } from 'react-icons/md';
 import { GrChapterAdd } from 'react-icons/gr';
 
-import ProjectsList from './components/ProjectsList';
 import Toolbar from '../../Components/Toolbar';
+import Details from './components/Details';
 
-export default function Projects() {
+export default function NewProject() {
   const { global, setGlobal } = useContext(GlobalContext);
 
   return (
-    <div className='projects'>
+    <div className='newProject'>
       <Toolbar />
-      <ProjectsList />
+      <Details />
     </div>
   );
 }
