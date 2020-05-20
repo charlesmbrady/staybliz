@@ -81,6 +81,10 @@ export default function App() {
     API.checkToken().then((res) => {
       if (res.data.firstName) {
         setUser({ ...user, isAuthenticated: true });
+      } else {
+        API.logout().then(() => {
+          setUser({ ...user, isAuthenticated: false, isCreated: false });
+        });
       }
     });
   }, []);

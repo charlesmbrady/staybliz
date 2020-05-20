@@ -2,11 +2,17 @@ import './style.css';
 import React from 'react';
 import useForm from '../../Hooks/useForm';
 
-export default function FieldGroup({ type, label, name, placeholder }) {
+export default function FieldGroup({
+  type,
+  label,
+  name,
+  placeholder,
+  className,
+}) {
   const { handleChange, formValues, formErrors } = useForm();
 
   return (
-    <div className='fieldGroup'>
+    <div className={`${className} fieldGroup`}>
       <label className='label' data-test={`${name}-label`}>
         {label}
       </label>

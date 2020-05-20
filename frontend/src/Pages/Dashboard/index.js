@@ -10,7 +10,7 @@ import FieldGroup from '../../GenericComponents/FieldGroup';
 import FormFooter from '../../GenericComponents/FormFooter';
 import SubmitButton from '../../GenericComponents/SubmitButton';
 import LeftDrawer from '../../Components/LeftDrawer';
-import Toolbar from '../../GenericComponents/UnevenHTrack';
+import UnevenHTrack from '../../GenericComponents/UnevenHTrack';
 import RightDrawer from '../../Components/RightDrawer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -18,8 +18,14 @@ export default function Dashboard() {
   const { global, setGlobal } = useContext(GlobalContext);
   const leftDrawerOpen = global.leftDrawerOpen;
 
-  const newProjectButton = <button>New porject</button>;
-  const projectToolbarItems = [newProjectButton];
+  const newProjectButton = <h3 className='dashboard-header'>Projects</h3>;
+  const newTestButton = <button>Add Test Case</button>;
+  const newFeatureButton = <button>Add Feature Group</button>;
+  const projectToolbarItems = [
+    newProjectButton,
+    newTestButton,
+    newFeatureButton,
+  ];
 
   return (
     <div
@@ -31,7 +37,14 @@ export default function Dashboard() {
     >
       <LeftDrawer className='leftDrawer' />
       <div className='dashboardContentContainer'>
-        <Toolbar id='oolbar' className='' items={projectToolbarItems} />
+        <UnevenHTrack
+          className='dashboardToolbar'
+          items={projectToolbarItems}
+        />
+        {/* make component for ProjectsList, and the Project itself/ if path matches /projects get all, if /project/id display project */}
+        {/* Make component for TestsList that just goes under the project details, make component for Test that also just renders */}
+
+        {/* if the path matches todos, render t*/}
         {/* <Switch>
           <Route path='/login' component={Login} />
 

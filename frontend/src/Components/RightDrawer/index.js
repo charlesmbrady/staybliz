@@ -5,6 +5,6 @@ import { UserContext } from '../../Contexts/UserContext';
 import { GlobalContext } from '../../Contexts/GlobalContext';
 import API from '../../Utilities/API';
 
-export default function RightDrawer() {
-  return <div className='right-track'></div>;
+export default function RightDrawer({ className }) {
+  return <div className={`${className} rightTrack`}></div>;
 }

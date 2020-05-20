@@ -10,7 +10,7 @@
 
 .dashboardGridContainer {
   display: grid;
-  grid-template-columns: 50px 10fr 0px;
+  grid-template-columns: 40px 10fr 0px;
   height: 100vh;
   overflow: scroll;
 }
@@ -21,17 +21,19 @@
   overflow: scroll;
 }
 .dashboardGridContainerRightDrawerOpen {
-  grid-template-columns: 50px 10fr 350px;
+  grid-template-columns: 40px 10fr 350px;
 }
 .dashboardGridContainerBothDrawersOpen {
   grid-template-columns: 100px 10fr 350px;
 }
 
 .dashboardContentContainer {
-  height: 100%;
+  /* height: 100%; */
   /* margin: 50px; */
   background: var(--sixth);
 }
 
 .dashboardToolbar {
+  background: var(--sixth);
+  /* margin-top: 15px; */
 }
