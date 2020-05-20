@@ -7,6 +7,7 @@ import logo from '../../assets/logo.png';
 
 export default function NavTrack() {
   const { user, setUser } = useContext(UserContext);
+
   const logout = () => {
     API.logout().then((res) => {
       if (res.status == 200) {
@@ -14,7 +15,6 @@ export default function NavTrack() {
       }
     });
   };
-  const title = 'Staybliz';
 
   const login = (
     <Link className={style.navLink} data-test='login-navlink' to='/login'>
@@ -50,7 +50,9 @@ export default function NavTrack() {
 
   return (
     <div className={style.track}>
-      <img src={logo} className={style.logo} alt='' />
+      <Link className={style.logoContainer} to='/'>
+        <img src={logo} className={style.logo} alt='' />
+      </Link>
 
       {items &&
         items.length > 0 &&

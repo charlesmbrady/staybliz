@@ -1,13 +1,18 @@
 import style from './style.css';
 import React from 'react';
 import useForm from '../../Hooks/useForm';
+import './style.css';
 
 export default function FieldGroup({ type, label, name, placeholder }) {
   const { handleChange, formValues, formErrors } = useForm();
 
   return (
     <div className={style.fieldGroup}>
-      <label className={style.label} data-test={`${name}-label`}>
+      <label
+        className={style.label}
+        className='gordo'
+        data-test={`${name}-label`}
+      >
         {label}
       </label>
       <input

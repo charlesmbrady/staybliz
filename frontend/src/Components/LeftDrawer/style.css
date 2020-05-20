@@ -1,15 +1,26 @@
+:root {
+  --main-color: #eafff9;
+  --second: #00aeef;
+  --third: #13e6af;
+  --fourth: #19090b;
+  --fifth: #780c56;
+  --sixth: #d5ece6;
+  --success: #00b989;
+}
+
 .track {
-  max-width: 200px;
-  background-color: blue;
+  /* max-width: 400px; */
+  /* background-color: var(--second); */
+  background-image: linear-gradient('to bottom', white, --second);
 }
 
 .menuIconContainer {
-  width: 100%;
+  /* width: 100%; */
   text-align: right;
 }
 .menuIcon {
-  height: 25px;
-  width: auto;
+  /* height: 25px; */
+  /* width: auto; */
   color: black;
 }
 .menuIcon:hover {
