@@ -37,6 +37,16 @@
   background: var(--sixth);
   width: 95%;
   margin: auto;
+  grid-gap: 25px;
   /* height: 40px; */
   /* margin-top: 15px; */
+}
+
+.toolbarIcon {
+  height: 40%;
+  width: auto;
+}
+.toolbarIcon:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }

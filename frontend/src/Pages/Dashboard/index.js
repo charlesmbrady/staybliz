@@ -13,19 +13,25 @@ import LeftDrawer from '../../Components/LeftDrawer';
 import UnevenHTrack from '../../GenericComponents/UnevenHTrack';
 import RightDrawer from '../../Components/RightDrawer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AiFillFolderAdd } from 'react-icons/ai';
+import { MdPlaylistAdd } from 'react-icons/md';
+import { GrChapterAdd } from 'react-icons/gr';
+
 import ProjectsList from './components/ProjectsList';
 
 export default function Dashboard() {
   const { global, setGlobal } = useContext(GlobalContext);
   const leftDrawerOpen = global.leftDrawerOpen;
 
-  const newProjectButton = <h3 className='dashboard-header'>Projects</h3>;
-  const newTestButton = <button>Add Test Case</button>;
-  const newFeatureButton = <button>Add Feature Group</button>;
+  const title = <h3 className='dashboard-header'>Projects</h3>;
+  const newProjectButton = <AiFillFolderAdd className='toolbarIcon' />;
+  const newTestButton = <MdPlaylistAdd className='toolbarIcon' />;
+  const newFeatureButton = <GrChapterAdd className='toolbarIcon' />;
   const projectToolbarItems = [
-    newProjectButton,
+    title,
     newTestButton,
     newFeatureButton,
+    newProjectButton,
   ];
 
   return (
@@ -50,7 +56,7 @@ export default function Dashboard() {
         <Switch>
           {/* <Route path='/login' component={Login} /> */}
 
-          <Route path='/dashboard' component={ProjectsList} />
+          <Route exact path='/dashboard' component={ProjectsList} />
         </Switch>
       </div>
       <RightDrawer className='rightDrawer' />

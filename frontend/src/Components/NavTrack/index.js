@@ -31,7 +31,7 @@ export default function NavTrack() {
   );
   const logoutButton = (
     <button
-      className='navLink'
+      className='navLink logoutButton'
       data-test='logout-button'
       onClick={() => logout()}
     >
