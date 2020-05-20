@@ -5,24 +5,28 @@ import Login from '../elements/login';
 import Register from '../elements/register';
 import Home from '../elements/home';
 
-describe('Users', function () {
-  it('Can create user', () => {
+describe('User Authentication', function () {
+  it('User can register for new account', () => {
     cy.visit('/');
     cy.get(Nav.REGISTER).click();
+    cy.url().should('include', '/register');
     cy.get(Register.FIRST_NAME).type('Charles');
     cy.get(Register.LAST_NAME).type('Brady');
     cy.get(Register.EMAIL).type('charlesmbrady@gmail.com');
     cy.get(Register.PASSWORD).type('Password1!');
     cy.get(Register.PASSWORD_CONFIRMATION).type('Password1!');
     cy.get(Register.SUBMIT).click();
+    cy.url().should('include', '/login');
   });
 
-  it('Can login with existing user', () => {
+  it('User can login', () => {
     cy.visit('/');
     cy.get(Nav.LOGIN).click();
+    cy.url().should('include', '/login');
     cy.get(Login.EMAIL).type('charlesmbrady@gmail.com');
     cy.get(Login.PASSWORD).type('Password1!');
     cy.get(Login.SUBMIT).click();
+    cy.url().should('include', '/dashboard');
   });
 
   it('Can logout', () => {
@@ -34,7 +38,7 @@ describe('Users', function () {
     cy.get(Nav.LOGOUT).click();
   });
 
-  it.only('visit hompage with previously logged in user should redirect you to dashboard', () => {
+  it('Authenticated user will be redirected from homepage to dashboard on homepage load', () => {
     const user = {
       firstName: 'Charles',
       lastName: 'Brady',
@@ -45,12 +49,11 @@ describe('Users', function () {
 
     cy.registerNewUser(user);
     cy.login(user);
-    cy.visit('/');
     cy.url().should('contain', 'dashboard');
   });
 });
 
-describe('api tests', () => {
+describe('API - Authentication', () => {
   it('Can create user', function () {
     cy.request('POST', `${Cypress.config('apiUrl')}/auth/user`, {
       firstName: 'charles',
