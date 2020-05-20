@@ -46,10 +46,7 @@ export default function Header() {
     ? authenticatedItems
     : notAuthenticatedItems;
 
-  // if (!user.isAuthenticated) {
-  //   return <Redirect to='/' />;
-  // }
-
+  useEffect(() => {}, [user.isAuthenticated]);
   return (
     <div className='navTrack'>
       <Link className='logoContainer' to='/'>

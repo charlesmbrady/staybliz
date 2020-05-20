@@ -1,6 +1,4 @@
 module.exports = {
-  EMAIL: '[data-test="email-input"]',
-  PASSWORD: '[data-test="password-input"]',
+  NAME: '[data-test="projectName-input"]',
   SUBMIT: '[data-test="submit-button"]',
-  TO_REGISTER: '[data-test="login-to-register"]',
 };

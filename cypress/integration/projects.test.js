@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 
 import Nav from '../elements/nav';
+import Toolbar from '../elements/toolbar';
+import NewProject from '../elements/newProject';
 
 describe('Project operations', () => {
   it('Can create project', function () {
@@ -14,6 +16,8 @@ describe('Project operations', () => {
 
     cy.registerNewUser(user);
     cy.login(user);
-    cy.get();
+    cy.get(Toolbar.NEW_PROJECT_BUTTON).click();
+    cy.get(NewProject.NAME).type('my project').click();
+    cy.get(NewProject.SUBMIT).click();
   });
 });
