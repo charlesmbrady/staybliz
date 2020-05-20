@@ -1,5 +1,5 @@
 {
-  "name": "staybliz",
+  "name": "stabilyzr",
   "version": "1.0.0",
   "description": "",
   "main": "backend/server.js",
@@ -52,7 +52,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charlesmbrady/staybliz.git"
+    "url": "git+https://github.com/charlesmbrady/stabilyzr.git"
   },
   "keywords": [
     "MERN",
@@ -71,9 +71,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/charlesmbrady/staybliz/issues"
+    "url": "https://github.com/charlesmbrady/stabilyzr/issues"
   },
-  "homepage": "https://github.com/charlesmbrady/staybliz#readme",
+  "homepage": "https://github.com/charlesmbrady/stabilyzr#readme",
   "devDependencies": {
     "@cypress/code-coverage": "^1.14.0",
     "cy-report-setup-helper": "^1.3.4",
