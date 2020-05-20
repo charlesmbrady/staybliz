@@ -1,0 +1,52 @@
+:root {
+  --main-color: #eafff9;
+  --second: #00aeef;
+  --third: #13e6af;
+  --fourth: #19090b;
+  --fifth: #780c56;
+  --sixth: #d5ece6;
+  --success: #00b989;
+}
+
+.dashboardGridContainer {
+  display: grid;
+  grid-template-columns: 40px 10fr 0px;
+  height: 100vh;
+  overflow: scroll;
+}
+.dashboardGridContainerLeftDrawerOpen {
+  display: grid;
+  grid-template-columns: 300px 10fr 0px;
+  height: 100vh;
+  overflow: scroll;
+}
+.dashboardGridContainerRightDrawerOpen {
+  grid-template-columns: 40px 10fr 350px;
+}
+.dashboardGridContainerBothDrawersOpen {
+  grid-template-columns: 100px 10fr 350px;
+}
+
+.dashboardContentContainer {
+  /* height: 100%; */
+  /* margin: 50px; */
+  background: var(--sixth);
+}
+
+.dashboardToolbar {
+  background: var(--sixth);
+  width: 95%;
+  margin: auto;
+  grid-gap: 25px;
+  /* height: 40px; */
+  /* margin-top: 15px; */
+}
+
+.toolbarIcon {
+  height: 40%;
+  width: auto;
+}
+.toolbarIcon:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
