@@ -26,3 +26,7 @@ html,
   /* --main-color: yellow; */
   /* --pane-padding: 5px 42px; */
 }
+
+input:focus {
+  outline: none;
+}
