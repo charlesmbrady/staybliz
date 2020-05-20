@@ -1,0 +1,10 @@
+.unevenHtrack {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+.unevenHtrack-item-container {
+  display: grid;
+  align-items: center;
+}
