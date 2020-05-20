@@ -1,10 +1,10 @@
-import style from './style.css';
+import './style.css';
 import React from 'react';
 
 export default function CancelButton({ text, cancelFunction }) {
   return (
     <button
-      className={style.cancelButton}
+      className='cancelButton'
       data-test='cancel-button'
       onClick={cancelFunction}
     >

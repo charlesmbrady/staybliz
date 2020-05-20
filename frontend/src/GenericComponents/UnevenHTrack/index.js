@@ -1,13 +1,13 @@
-import style from './style.css';
+import './style.css';
 import React from 'react';
 
 export default function UnevenHTrack({ items }) {
   return (
-    <div className={style.track}>
+    <div className='unevenHtrack'>
       {items &&
         items.length > 0 &&
         items.map((item, i) => (
-          <div className={style.trackItemContainer} key={i}>
+          <div className='unevenHtrack-item-container' key={i}>
             {item}
           </div>
         ))}

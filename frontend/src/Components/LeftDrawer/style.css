@@ -8,7 +8,7 @@
   --success: #00b989;
 }
 
-.track {
+.left-track {
   /* max-width: 400px; */
   /* background-color: var(--second); */
   background-image: linear-gradient('to bottom', white, --second);
@@ -16,12 +16,12 @@
 
 .menuIconContainer {
   /* width: 100%; */
-  text-align: right;
+  text-align: center;
 }
 .menuIcon {
-  /* height: 25px; */
-  /* width: auto; */
-  color: black;
+  height: 25px;
+  width: auto;
+  color: var(--fourth);
 }
 .menuIcon:hover {
   cursor: pointer;

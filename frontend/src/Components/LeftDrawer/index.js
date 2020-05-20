@@ -16,10 +16,10 @@ export default function LeftDrawer() {
   return (
     <div className={style.track}>
       <div className={style.menuIconContainer}>
-        {/* <TiThMenu
+        <TiThMenu
           className={style.menuIcon}
           onClick={() => toggleLeftDrawer()}
-        /> */}
+        />
       </div>
     </div>
   );

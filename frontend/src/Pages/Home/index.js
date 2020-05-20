@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import React, { useState, useContext } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
@@ -16,42 +16,42 @@ export default function Home() {
   const { global, setGlobal } = useContext(GlobalContext);
   const leftDrawerOpen = global.leftDrawerOpen;
 
-  const mainItem = <h1 className={style.heroHeader}>Say goodbye to bugs.</h1>;
-  const subItem = <p className={style.subItem}>Or rather, never say "hello"</p>;
+  const mainItem = <h1 className='heroHeader'>Say goodbye to bugs.</h1>;
+  const subItem = <p className='subItem'>Or rather, never say "hello"</p>;
 
   const infoLine = (
-    <p className={style.infoLine}>
-      Assure <span className={style.quality}>Quality</span> and{' '}
-      <span className={style.stability}>Stability</span> with your new favorite
-      Test Case Management tool
+    <p className='infoLine'>
+      Assure <span className='quality'>Quality</span> and{' '}
+      <span className='stability'>Stability</span> with your new favorite Test
+      Case Management tool
     </p>
   );
   const getStartedButton = (
-    <Link className={style.getStartedButton} to='/login'>
+    <Link className='getStartedButton' to='/login'>
       Get Started
     </Link>
   );
 
   const jumboOne = <Hero mainItem={mainItem} subItem={subItem} />;
   const jumboTwo = (
-    <Hero className={jumboTwo} mainItem={infoLine} subItem={getStartedButton} />
+    <Hero className='jumboTwo' mainItem={infoLine} subItem={getStartedButton} />
   );
   return (
     <div
       className={
-        leftDrawerOpen ? style.gridContainerLeftDrawerOpen : style.gridContainer
+        leftDrawerOpen ? 'homeGridContainerLeftDrawerOpen' : 'homeGridContainer'
       }
     >
-      <LeftDrawer className={style.leftDrawer} />
-      <div className={style.contentContainer}>
+      <LeftDrawer className='homeLeftDrawer' />
+      <div className='homeContentContainer'>
         {/* <hr className={style.divide} /> */}
-        <div className={style.heroContainer}>
+        <div className='heroContainer'>
           {jumboOne}
-          <hr className={style.divide} />
+          <hr className='divide' />
           {jumboTwo}
         </div>
       </div>
-      <RightDrawer className={style.rightDrawer} />
+      <RightDrawer className='homeRightDrawer' />
     </div>
   );
 }

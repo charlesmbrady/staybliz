@@ -6,9 +6,5 @@ import { GlobalContext } from '../../Contexts/GlobalContext';
 import API from '../../Utilities/API';
 
 export default function RightDrawer() {
-  return (
-    <div className={style.track}>
-      <li>i</li>
-    </div>
-  );
+  return <div className='right-track'></div>;
 }
