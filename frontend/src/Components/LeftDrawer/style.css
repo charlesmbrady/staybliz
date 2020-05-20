@@ -8,21 +8,32 @@
   --success: #00b989;
 }
 
-.track {
+.left-track {
   /* max-width: 400px; */
   /* background-color: var(--second); */
   background-image: linear-gradient('to bottom', white, --second);
+  /* box-shadow: 1px 0px 6px black; */
+  /* border-right: 1px solid var(--fifth); */
+  z-index: 100;
 }
 
 .menuIconContainer {
   /* width: 100%; */
-  text-align: right;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* width: 100%; */
 }
 .menuIcon {
-  /* height: 25px; */
-  /* width: auto; */
-  color: black;
+  height: 40px;
+  /* width: 100%; */
+  color: var(--fourth);
 }
 .menuIcon:hover {
   cursor: pointer;
+}
+
+.list {
+  display: inline;
+  text-align: left;
 }

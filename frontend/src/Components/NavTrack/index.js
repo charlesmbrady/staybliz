@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import React, { useContext, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
@@ -15,23 +15,23 @@ export default function NavTrack() {
   };
 
   const login = (
-    <Link className={style.navLink} data-test='login-navlink' to='/login'>
+    <Link className='navLink' data-test='login-navlink' to='/login'>
       Login
     </Link>
   );
   const register = (
-    <Link className={style.navLink} data-test='register-navlink' to='/register'>
+    <Link className='navLink' data-test='register-navlink' to='/register'>
       Register
     </Link>
   );
   const dashboard = (
-    <Link className={style.navLink} to='/dashboard'>
+    <Link className='navLink' to='/dashboard'>
       Dashboard
     </Link>
   );
   const logoutButton = (
     <button
-      className={style.navLink}
+      className='navLink'
       data-test='logout-button'
       onClick={() => logout()}
     >
@@ -51,16 +51,16 @@ export default function NavTrack() {
   // }
 
   return (
-    <div className={style.track}>
-      <Link className={style.logoContainer} to='/'>
-        <img src={logo} className={style.logo} alt='' />
+    <div className='navTrack'>
+      <Link className='logoContainer' to='/'>
+        <img src={logo} className='logo' alt='' />
       </Link>
 
       {items &&
         items.length > 0 &&
         items.map((item, i) => (
-          <div className={style.trackItemContainer} key={i}>
-            <li className={style.trackItem}>{item}</li>
+          <div className='navTrackItemContainer' key={i}>
+            <li className='navTrackItem'>{item}</li>
           </div>
         ))}
     </div>

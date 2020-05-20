@@ -8,7 +8,7 @@
   --success: #00b989;
 }
 
-.gridContainer {
+.loginGridContainer {
   display: grid;
   justify-items: center;
   padding: 2rem;
@@ -16,7 +16,7 @@
   height: 100vh;
 }
 
-.container {
+.loginFormContainer {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 400px;

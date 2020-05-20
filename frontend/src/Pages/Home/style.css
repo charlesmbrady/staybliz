@@ -8,27 +8,27 @@
   --success: #00b989;
 }
 
-.gridContainer {
+.homeGridContainer {
   display: grid;
   grid-template-columns: 0px 10fr 0px;
   height: 100vh;
   overflow: scroll;
   background: url('../../assets//Background1@3x.png');
 }
-.gridContainerLeftDrawerOpen {
+.homeGridContainerLeftDrawerOpen {
   display: grid;
   grid-template-columns: 100px 10fr 0px;
   height: 100vh;
   overflow: scroll;
 }
-.gridContainerRightDrawerOpen {
+.homeGridContainerRightDrawerOpen {
   grid-template-columns: 50px 10fr 350px;
 }
-.gridContainerBothDrawersOpen {
+.homeGridContainerBothDrawersOpen {
   grid-template-columns: 100px 10fr 350px;
 }
 
-.contentContainer {
+.homeContentContainer {
   height: 100%;
   /* margin: 50px; */
 }
@@ -78,12 +78,4 @@
 
 .stability {
   color: var(--second);
-}
-.leftDrawer {
-}
-
-.rightDrawer {
-}
-
-.heroContainer {
 }

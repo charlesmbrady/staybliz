@@ -8,11 +8,14 @@
   --success: #00b989;
 }
 
-.title {
+.formTitle {
   color: var(--fifth);
   /* background: var(--sixth); */
   text-align: center;
   /* border-radius: 4px; */
   /* border-bottom: 1px solid var(--fifth); */
   /* text-decoration: underline; */
+}
+
+.formHeader {
 }

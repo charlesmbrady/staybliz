@@ -1,4 +1,4 @@
-import style from './style.css';
+import './style.css';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
@@ -6,7 +6,7 @@ import { GlobalContext } from '../../Contexts/GlobalContext';
 import API from '../../Utilities/API';
 import { TiThMenu } from 'react-icons/ti';
 
-export default function LeftDrawer() {
+export default function LeftDrawer({ className }) {
   const { global, setGlobal } = useContext(GlobalContext);
 
   const toggleLeftDrawer = () => {
@@ -14,12 +14,16 @@ export default function LeftDrawer() {
   };
 
   return (
-    <div className={style.track}>
-      <div className={style.menuIconContainer}>
-        {/* <TiThMenu
-          className={style.menuIcon}
-          onClick={() => toggleLeftDrawer()}
-        /> */}
+    <div className={`${className} left-track`}>
+      <div className='menuIconContainer'>
+        <TiThMenu className='menuIcon' onClick={() => toggleLeftDrawer()} />
+        {global.leftDrawerOpen && (
+          <div className='list'>
+            <li>Authentication</li>
+            <li>one</li>
+            <li>one</li>
+          </div>
+        )}
       </div>
     </div>
   );
