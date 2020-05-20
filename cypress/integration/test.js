@@ -34,7 +34,7 @@ describe('Users', function () {
     cy.get(Nav.LOGOUT).click();
   });
 
-  it('visit hompage with previously logged in user should redirect you to dashboard', () => {
+  it.only('visit hompage with previously logged in user should redirect you to dashboard', () => {
     const user = {
       firstName: 'Charles',
       lastName: 'Brady',
@@ -44,6 +44,9 @@ describe('Users', function () {
     };
 
     cy.registerNewUser(user);
+    cy.login(user);
+    cy.visit('/');
+    cy.url().should('contain', 'dashboard');
   });
 });
 
