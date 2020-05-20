@@ -6,13 +6,14 @@ module.exports = () => {
     lastName: 'Gates',
     email: 'j@g.co',
     password: process.env.ADMIN_USER_PWD,
-    isAdmin: true
+    isAdmin: true,
   });
   db.User.create({
-    firstName: 'Jane',
-    lastName: 'Jobs',
-    email: 'j@j.co',
-    password: process.env.USER_PWD,
-    isAdmin: false
+    firstName: 'The',
+    lastName: 'GOAT',
+    email: 'the.goat@theGOAT.com',
+    // password: process.env.USER_PWD,
+    password: 'mypassword1!',
+    isAdmin: false,
   });
 };
