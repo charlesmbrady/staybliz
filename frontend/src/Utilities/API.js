@@ -31,4 +31,10 @@ export default {
       throw err;
     });
   },
+  getProjectById: function (id) {
+    console.log('the id' + id);
+    return axios.get(`/api/projects/${id}`).catch((err) => {
+      throw err;
+    });
+  },
 };

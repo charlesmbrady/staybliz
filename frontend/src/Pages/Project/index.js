@@ -1,5 +1,5 @@
 import './style.css';
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useParams, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
 import { GlobalContext } from '../../Contexts/GlobalContext';
@@ -20,13 +20,23 @@ import { GrChapterAdd } from 'react-icons/gr';
 import Toolbar from '../../Components/Toolbar';
 import Details from './components/Details';
 
-export default function Project() {
+export default function Project({ match }) {
   const { global, setGlobal } = useContext(GlobalContext);
+  // let { project } = useParams();
+  const [project, setProject] = useState();
+
+  useEffect(() => {
+    API.getProjectById(parseInt(match.params.project)).then((res) => {
+      setProject(res.data);
+    });
+  }, []);
 
   return (
     <div className='project'>
       <Toolbar />
-      <Details />
+      {project && (
+        <div className='projectDetails'>Project sDetails:{project.name}</div>
+      )}
     </div>
   );
 }

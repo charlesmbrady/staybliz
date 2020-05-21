@@ -49,7 +49,7 @@ export default function Header() {
   useEffect(() => {}, [user.isAuthenticated]);
   return (
     <div className='navTrack'>
-      <Link className='logoContainer' to='/'>
+      <Link className='logoContainer' to='/' data-test='home'>
         <img src={logo} className='logo' alt='' />
       </Link>
 

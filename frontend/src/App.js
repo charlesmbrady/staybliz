@@ -130,22 +130,24 @@ export default function App() {
                       path='/dashboard'
                       component={Dashboard}
                     />
-                    <PrivateRoute path='/projects/new'>
+                    <PrivateRoute exact path='/projects/new'>
                       <NewProject />
                     </PrivateRoute>
-                    <PrivateRoute path='/projects/:id/tests/new'>
+                    <PrivateRoute exact path='/projects/:project/tests/new'>
                       <NewTest />
                     </PrivateRoute>
                     <PrivateRoute exact path='/projects'>
                       <Projects />
                     </PrivateRoute>
-                    <PrivateRoute exact path='/projects/:id'>
-                      <Project />
-                    </PrivateRoute>
-                    <PrivateRoute exact path='/projects/:id/tests'>
+                    <Route
+                      exact
+                      path='/projects/:project'
+                      component={Project}
+                    />
+                    <PrivateRoute exact path='/projects/:project/tests'>
                       <Tests />
                     </PrivateRoute>
-                    <PrivateRoute exact path='/projects/:id/tests/:id'>
+                    <PrivateRoute exact path='/projects/:project/tests/:id'>
                       <Test />
                     </PrivateRoute>
 

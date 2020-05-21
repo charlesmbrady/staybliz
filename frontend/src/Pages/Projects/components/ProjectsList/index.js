@@ -1,5 +1,6 @@
 import './style.css';
 import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import API from '../../../../Utilities/API';
 import { DataContext } from '../../../../Contexts/DataContext';
@@ -17,8 +18,15 @@ export default function ProjectsList() {
 
   return (
     <div className='projectsList'>
-      {data.map((project) => (
-        <ProjectCard data={project} key={project.id} />
+      {data.map((project, i) => (
+        <div>
+          <Link
+            to={`/projects/${project.id}`}
+            data-test={`project-card-${project.id}`}
+          >
+            <ProjectCard data={project} key={i} />
+          </Link>
+        </div>
       ))}
     </div>
   );
