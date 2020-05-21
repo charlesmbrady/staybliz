@@ -15,20 +15,18 @@ import RightDrawer from '../../Components/RightDrawer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AiFillFolderAdd } from 'react-icons/ai';
 import { MdPlaylistAdd } from 'react-icons/md';
-import Project from '../Project/index';
 import { GrChapterAdd } from 'react-icons/gr';
 
-import ProjectsList from './components/ProjectsList';
+import TestsList from './components/TestsList';
 import Toolbar from '../../Components/Toolbar';
 
-export default function Projects() {
+export default function Tests() {
   const { global, setGlobal } = useContext(GlobalContext);
 
   return (
-    <div className='projects'>
+    <div className='tests'>
       <Toolbar />
-
-      <ProjectsList />
+      <TestsList />
     </div>
   );
 }

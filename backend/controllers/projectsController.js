@@ -19,11 +19,13 @@ module.exports = {
       })
       .catch((err) => {
         res.json(err);
-        console.log('ERROR: ' + err.errors[0].message);
+        console.log('ERROR: ' + err);
       });
   },
   getById: function (req, res) {
     const decoded = jwt.decode(req.cookies.token);
+    // const project = req.body;
+    console.log('in it');
 
     db.Project.findAll({
       where: {
@@ -33,14 +35,14 @@ module.exports = {
       if (err) {
         res.status(500).send(err);
       }
-      dbProjects.filter((projects) => project.id == req.params.id);
+      dbProjects.filter((project) => project.id == req.params.id);
       res.json(dbProjects[0]);
     });
   },
   getAllByUserId: function (req, res) {
     const decoded = jwt.decode(req.cookies.token);
 
-    db.Projects.findAll({
+    db.Project.findAll({
       where: {
         UserId: decoded.id,
       },

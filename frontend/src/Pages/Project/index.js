@@ -1,5 +1,5 @@
 import './style.css';
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useParams, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext';
 import { GlobalContext } from '../../Contexts/GlobalContext';
@@ -15,20 +15,28 @@ import RightDrawer from '../../Components/RightDrawer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AiFillFolderAdd } from 'react-icons/ai';
 import { MdPlaylistAdd } from 'react-icons/md';
-import Project from '../Project/index';
 import { GrChapterAdd } from 'react-icons/gr';
 
-import ProjectsList from './components/ProjectsList';
 import Toolbar from '../../Components/Toolbar';
+import Details from './components/Details';
 
-export default function Projects() {
+export default function Project({ match }) {
   const { global, setGlobal } = useContext(GlobalContext);
+  // let { project } = useParams();
+  const [project, setProject] = useState();
+
+  useEffect(() => {
+    API.getProjectById(parseInt(match.params.project)).then((res) => {
+      setProject(res.data);
+    });
+  }, []);
 
   return (
-    <div className='projects'>
+    <div className='project'>
       <Toolbar />
-
-      <ProjectsList />
+      {project && (
+        <div className='projectDetails'>Project sDetails:{project.name}</div>
+      )}
     </div>
   );
 }

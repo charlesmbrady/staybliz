@@ -5,7 +5,7 @@ import { UserContext } from '../../Contexts/UserContext';
 import API from '../../Utilities/API';
 import logo from '../../assets/logo.png';
 
-export default function NavTrack() {
+export default function Header() {
   const { user, setUser } = useContext(UserContext);
 
   const logout = () => {
@@ -46,13 +46,10 @@ export default function NavTrack() {
     ? authenticatedItems
     : notAuthenticatedItems;
 
-  // if (!user.isAuthenticated) {
-  //   return <Redirect to='/' />;
-  // }
-
+  useEffect(() => {}, [user.isAuthenticated]);
   return (
     <div className='navTrack'>
-      <Link className='logoContainer' to='/'>
+      <Link className='logoContainer' to='/' data-test='home'>
         <img src={logo} className='logo' alt='' />
       </Link>
 

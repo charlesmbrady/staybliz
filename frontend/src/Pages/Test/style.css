@@ -8,8 +8,8 @@
   --success: #00b989;
 }
 
-.projects {
-  display: grid;
+.test {
+  /* display: grid; */
   /* height: 100vh; */
   /* overflow: scroll; */
 }

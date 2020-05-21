@@ -26,7 +26,7 @@ describe('User Authentication', function () {
     cy.get(Login.EMAIL).type('charlesmbrady@gmail.com');
     cy.get(Login.PASSWORD).type('Password1!');
     cy.get(Login.SUBMIT).click();
-    cy.url().should('include', '/dashboard');
+    cy.url().should('include', '/projects');
   });
 
   it('Can logout', () => {
@@ -38,7 +38,7 @@ describe('User Authentication', function () {
     cy.get(Nav.LOGOUT).click();
   });
 
-  it('Authenticated user will be redirected from homepage to dashboard on homepage load', () => {
+  it('Authenticated user will be redirected from homepage to projects on homepage load', () => {
     const user = {
       firstName: 'Charles',
       lastName: 'Brady',
@@ -49,7 +49,7 @@ describe('User Authentication', function () {
 
     cy.registerNewUser(user);
     cy.login(user);
-    cy.url().should('contain', 'dashboard');
+    cy.url().should('contain', 'projects');
   });
 
   it('Non-authenticated user will be redirect to login from protected route', () => {

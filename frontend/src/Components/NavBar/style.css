@@ -8,8 +8,12 @@
   --success: #00b989;
 }
 
-.projects {
-  display: grid;
-  /* height: 100vh; */
-  /* overflow: scroll; */
+.navBar {
+  border: 1px solid blue;
+  text-align: center;
+}
+
+.navBarItem {
+  display: inline;
+  padding: 15px;
 }

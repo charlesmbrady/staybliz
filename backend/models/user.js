@@ -67,12 +67,12 @@ module.exports = (sequelize, DataTypes) => {
     return values;
   };
 
-  // User.hasMany(Todo);
+  // User.hasMany(Projects);
   User.associate = (models) => {
     User.hasMany(models.Project, {});
   };
 
-  // User.hasMany(Todo);
+  // User.hasMany(Tests);
   User.associate = (models) => {
     User.hasMany(models.Test, {});
   };

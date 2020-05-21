@@ -27,7 +27,11 @@ export default function Home() {
     </p>
   );
   const getStartedButton = (
-    <Link className='getStartedButton' to='/login'>
+    <Link
+      className='getStartedButton'
+      to='/login'
+      data-test='get-started-button'
+    >
       Get Started
     </Link>
   );

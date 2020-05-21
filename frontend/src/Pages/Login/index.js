@@ -14,7 +14,7 @@ export default function Login() {
   const { user } = useContext(UserContext);
 
   if (user.isAuthenticated) {
-    return <Redirect to='/dashboard' />;
+    return <Redirect to='/projects' />;
   }
 
   const fieldGroups = [

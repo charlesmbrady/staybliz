@@ -5,6 +5,7 @@ import { FormErrorsContext } from '../Contexts/FormErrorsContext';
 import { GlobalContext } from '../Contexts/GlobalContext';
 import API from '../Utilities/API';
 import validate from '../Utilities/formValidations';
+import { Redirect } from 'react-router-dom';
 
 const useForm = (callback) => {
   const { formValues, setFormValues } = useContext(FormValuesContext);
@@ -52,7 +53,25 @@ const useForm = (callback) => {
       case 'registerUser':
         registerUser();
         break;
+
+      case 'createProject':
+        createProject();
+        break;
     }
+  };
+  const createProject = () => {
+    if (formErrors.projectName) {
+      return 0;
+    }
+    API.createProject({
+      name: formValues.projectName,
+    }).then((res) => {
+      if (res.status === 200) {
+        // redirect to homepage here
+        clearForm();
+        setUser({ ...user, isAuthenticated: true });
+      }
+    });
   };
   const authenticateUser = () => {
     if (formErrors.email || formErrors.password) {
