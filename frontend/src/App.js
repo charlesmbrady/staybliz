@@ -10,6 +10,7 @@ import './style.css';
 import PrivateRoute from './PrivateRoute';
 import { UserContext } from './Contexts/UserContext';
 import { GlobalContext } from './Contexts/GlobalContext';
+import { DataContext } from './Contexts/DataContext';
 import { FormValuesContext } from './Contexts/FormValuesContext';
 import { FormErrorsContext } from './Contexts/FormErrorsContext';
 import API from './Utilities/API';
@@ -54,6 +55,9 @@ export default function App() {
     global,
     setGlobal,
   ]);
+
+  const [data, setData] = useState([]);
+  const dataValue = useMemo(() => ({ data, setData }), [data, setData]);
 
   // Set FormValuesContext provider values
   const [formValues, setFormValues] = useState({
@@ -100,43 +104,56 @@ export default function App() {
     });
   }, []);
 
+  // useEffect(() => {
+  //   API.getAllProjects().then((res) => {
+  //     console.log('the res' + res);
+  //     setData(res.data);
+  //   });
+  // }, []);
+
   return (
     <UserContext.Provider value={userValue}>
       <GlobalContext.Provider value={globalValue}>
         <FormValuesContext.Provider value={formValuesValue}>
           <FormErrorsContext.Provider value={formErrorsValue}>
-            <Router>
-              <div className='main-container'>
-                {global.isLoading && <Mask />}
-                {user.isAuthenticated && <Redirect to='/projects' />}
-                <Header />
-                <Switch>
-                  <Route exact path='/login' component={Login} />
-                  <Route exact path='/register' component={Register} />
-                  <PrivateRoute exact path='/dashboard' component={Dashboard} />
-                  <PrivateRoute path='/projects/new'>
-                    <NewProject />
-                  </PrivateRoute>
-                  <PrivateRoute path='/projects/:id/tests/new'>
-                    <NewTest />
-                  </PrivateRoute>
-                  <PrivateRoute exact path='/projects'>
-                    <Projects />
-                  </PrivateRoute>
-                  <PrivateRoute exact path='/projects/:id'>
-                    <Project />
-                  </PrivateRoute>
-                  <PrivateRoute exact path='/projects/:id/tests'>
-                    <Tests />
-                  </PrivateRoute>
-                  <PrivateRoute exact path='/projects/:id/tests/:id'>
-                    <Test />
-                  </PrivateRoute>
+            <DataContext.Provider value={dataValue}>
+              <Router>
+                <div className='main-container'>
+                  {global.isLoading && <Mask />}
+                  {user.isAuthenticated && <Redirect to='/projects' />}
+                  <Header />
+                  <Switch>
+                    <Route exact path='/login' component={Login} />
+                    <Route exact path='/register' component={Register} />
+                    <PrivateRoute
+                      exact
+                      path='/dashboard'
+                      component={Dashboard}
+                    />
+                    <PrivateRoute path='/projects/new'>
+                      <NewProject />
+                    </PrivateRoute>
+                    <PrivateRoute path='/projects/:id/tests/new'>
+                      <NewTest />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/projects'>
+                      <Projects />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/projects/:id'>
+                      <Project />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/projects/:id/tests'>
+                      <Tests />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/projects/:id/tests/:id'>
+                      <Test />
+                    </PrivateRoute>
 
-                  <Route path='/' component={Home} />
-                </Switch>
-              </div>
-            </Router>
+                    <Route path='/' component={Home} />
+                  </Switch>
+                </div>
+              </Router>
+            </DataContext.Provider>
           </FormErrorsContext.Provider>
         </FormValuesContext.Provider>
       </GlobalContext.Provider>

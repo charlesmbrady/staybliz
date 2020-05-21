@@ -1,39 +1,25 @@
 import './style.css';
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ProjectCard from './ProjectCard';
+import API from '../../../../Utilities/API';
+import { DataContext } from '../../../../Contexts/DataContext';
 
 export default function ProjectsList() {
-  const projects = [
-    {
-      name: 'stabilyzr',
-      testCount: 10,
-    },
-    {
-      name: 'stabilyzr',
-      testCount: 10,
-    },
-    {
-      name: 'stabilyzr',
-      testCount: 10,
-    },
-  ];
+  // const [projects, setProjects] = useState([]);
+  const { data, setData } = useContext(DataContext);
+
+  useEffect(() => {
+    API.getAllProjects().then((res) => {
+      console.log('the res' + res);
+      setData(res.data);
+    });
+  }, []);
+
   return (
     <div className='projectsList'>
-      {projects.map((project, i) => {
-        <ProjectCard item={project} key={i} />;
-      })}
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
-      <ProjectCard item={projects[0]} />
+      {data.map((project) => (
+        <ProjectCard data={project} key={project.id} />
+      ))}
     </div>
   );
 }

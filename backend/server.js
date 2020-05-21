@@ -19,18 +19,14 @@ if (global.__coverage__) {
 app.use(cookieParser());
 app.use(routes); // Link routesx
 
-app.get('/healthcheck', (req, res) => {
-  res.send('App is running!');
-});
-
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
   // Handle React routing, return all requests to React app
-  app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../frontend/dist'));
-  });
+  // app.get('*', function (req, res) {
+  //   res.sendFile(path.join(__dirname, '../frontend/dist'));
+  // });
 }
 
 // Error handler

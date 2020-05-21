@@ -67,7 +67,7 @@ const useForm = (callback) => {
       name: formValues.projectName,
     }).then((res) => {
       if (res.status === 200) {
-        console.log('project created ! ' + res.body);
+        // redirect to homepage here
         clearForm();
         setUser({ ...user, isAuthenticated: true });
       }

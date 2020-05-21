@@ -26,4 +26,9 @@ export default {
       throw err;
     });
   },
+  getAllProjects: function () {
+    return axios.get('/api/projects').catch((err) => {
+      throw err;
+    });
+  },
 };

@@ -6,6 +6,7 @@ export const FormValuesContext = createContext({
   // Functional piece is in App.js
 
   firstName: null,
+  projectName: null,
   lastName: null,
   email: null,
   password: null,

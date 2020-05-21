@@ -40,7 +40,7 @@ module.exports = {
   getAllByUserId: function (req, res) {
     const decoded = jwt.decode(req.cookies.token);
 
-    db.Projects.findAll({
+    db.Project.findAll({
       where: {
         UserId: decoded.id,
       },
