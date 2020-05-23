@@ -58,7 +58,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|ico)$/i,
         loader: 'file-loader',
         options: {
           outputPath: 'images',
